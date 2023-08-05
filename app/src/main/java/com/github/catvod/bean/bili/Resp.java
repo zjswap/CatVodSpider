@@ -66,7 +66,7 @@ public class Resp {
             Vod vod = new Vod();
             vod.setVodId(getBvId());
             vod.setVodName(Jsoup.parse(getTitle()).text());
-            vod.setVodRemarks(getDuration().split(":")[0] + "分鐘");
+            vod.setVodRemarks(getDuration().split(":")[0] + "分钟");
             vod.setVodPic(getPic().startsWith("//") ? "https:" + getPic() : getPic());
             return vod;
         }
