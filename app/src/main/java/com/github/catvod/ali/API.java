@@ -89,8 +89,8 @@ public class API {
         quality.put("2k", "QHD");
         quality.put("超清", "FHD");
         quality.put("高清", "HD");
-        quality.put("標清", "SD");
-        quality.put("流暢", "LD");
+        quality.put("标清", "SD");
+        quality.put("流畅", "LD");
     }
 
     public void setRefreshToken(String token) {
@@ -194,7 +194,7 @@ public class API {
             shareToken = new JSONObject(result).getString("share_token");
         } catch (Exception e) {
             e.printStackTrace();
-            Utils.notify("來晚啦，該分享已失效。");
+            Utils.notify("来晚了，该分享已失效。");
         }
     }
 
@@ -289,7 +289,7 @@ public class API {
         List<Item> files = new ArrayList<>();
         List<Item> subs = new ArrayList<>();
         listFiles(new Item(getParentFileId(fileId, object)), files, subs);
-        List<String> playFrom = Arrays.asList("原畫", "超清", "高清");
+        List<String> playFrom = Arrays.asList("原画", "超清", "高清");
         List<String> episode = new ArrayList<>();
         List<String> playUrl = new ArrayList<>();
         for (Item file : files)
@@ -512,7 +512,7 @@ public class API {
             FrameLayout frame = new FrameLayout(Init.context());
             EditText input = new EditText(Init.context());
             frame.addView(input, params);
-            dialog = new AlertDialog.Builder(Init.getActivity()).setTitle("請輸入Token").setView(frame).setNeutralButton("QRCode", (dialog, which) -> onNeutral()).setNegativeButton(android.R.string.cancel, null).setPositiveButton(android.R.string.ok, (dialog, which) -> onPositive(input.getText().toString())).show();
+            dialog = new AlertDialog.Builder(Init.getActivity()).setTitle("请输入Token").setView(frame).setNeutralButton("QRCode", (dialog, which) -> onNeutral()).setNegativeButton(android.R.string.cancel, null).setPositiveButton(android.R.string.ok, (dialog, which) -> onPositive(input.getText().toString())).show();
         } catch (Exception ignored) {
         }
     }
@@ -561,7 +561,7 @@ public class API {
             frame.addView(image, params);
             dialog = new AlertDialog.Builder(Init.getActivity()).setView(frame).setOnCancelListener(this::dismiss).setOnDismissListener(this::dismiss).show();
             dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-            Utils.notify("請使用阿里雲盤 App 掃描二維碼");
+            Utils.notify("请使用阿里云盘App扫描二维码");
         } catch (Exception ignored) {
         }
     }
